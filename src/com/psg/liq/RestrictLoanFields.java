@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.misys.liq.Messages;
+import com.misys.liq.bm.desktopcore.main.cdt.LiqMNCodeChangeItem;
 import com.misys.liq.bm.desktopcore.main.cdt.LiqMNCollectionChangeItem;
 import com.misys.liq.bm.desktopcore.main.cdt.LiqMNDateChangeItem;
 import com.misys.liq.bm.desktopcore.main.cdt.ObjectEvent;
@@ -49,6 +50,26 @@ public class RestrictLoanFields implements LiqEventAction {
 						ExceptionUtility.throwException((Throwable) new LiqError(StringUtility.bindWith(
 								Messages.liqNlsExternalizedMessage("GIB Internal Validation: "
 										+ "Maturity Change is restricted, Please use FCLS to do this event"),
+								new Object[0])));
+
+					}
+
+				}
+
+			}
+			
+			else if (obj instanceof LiqMNCodeChangeItem) {
+				LiqMNCodeChangeItem item = (LiqMNCodeChangeItem) obj;
+				String strFldCode = item.fieldCode;
+
+				if ("RSKTP".equals(strFldCode)) {
+					System.out.print("\n\nRisk Type  New: " + item.newTextValue.toString());
+					System.out.print("\nRisk Type Old: " + item.previousTextValue.toString());
+					if (!item.newTextValue.toString().equals(item.previousTextValue.toString())) {
+
+						ExceptionUtility.throwException((Throwable) new LiqError(StringUtility.bindWith(
+								Messages.liqNlsExternalizedMessage("GIB Internal Validation: "
+										+ "Risk Type Change is restricted, Please use FCLS to do this event"),
 								new Object[0])));
 
 					}
