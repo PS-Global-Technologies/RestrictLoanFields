@@ -1,0 +1,64 @@
+importPackage(com.misys.liq.bm.desktopcore.main.cdt.customer);
+importPackage(com.sxsy.smtj.exceptions);
+importPackage(com.misys.liq.infrastructure.exceptions);
+importPackage(com.misys.liq);
+importPackage(com.misys.liq.infrastructure.bm.handlers);
+importPackage(com.misys.custom.controllerevents);
+/**
+ * $boilerplate$
+ * For Controller Events to Work Start LoanIQ with "-scriptedControllerEvents:Y"
+*/
+new Object() {
+ postOpenInitialization: function(controller) {
+ //verify the client logs for below message 
+com.misys.liq.LoanIQ.logError("Control is in postOpenInitialization..." + controller.getName() + "\n");
+
+var widgetRefNum1 = controller.getSubpartNamed("addButton");
+com.misys.liq.LoanIQ.logError("widgetcRefNum1 in postOpenInitialization..." + widgetRefNum1 + "\n");
+widgetRefNum1.protect();
+
+var widgetRefNum2 = controller.getSubpartNamed("modifyButton");
+com.misys.liq.LoanIQ.logError("widgetcRefNum2 in postOpenInitialization..." + widgetRefNum2 + "\n");
+widgetRefNum2.protect();
+
+var widgetRefNum3 = controller.getSubpartNamed("remainingAmountButton");
+com.misys.liq.LoanIQ.logError("widgetRefNum3 in postOpenInitialization..." + widgetRefNum3 + "\n");
+widgetRefNum3.protect();
+
+var widgetRefNum4 = controller.getSubpartNamed("deleteButton");
+com.misys.liq.LoanIQ.logError("widgetRefNum4 in postOpenInitialization..." + widgetRefNum4 + "\n");
+widgetRefNum4.protect();
+
+
+
+
+var widgetRefNum5 = controller.getSubpartNamed("optionsMenu");
+com.misys.liq.LoanIQ.logError("widgetRefNum5 in postOpenInitialization..." + widgetRefNum5 + "\n");
+widgetRefNum5.disableValue("deleteScheduleMenuChoice");
+
+
+var widgetRefNum6 = controller.getSubpartNamed("optionsMenu");
+com.misys.liq.LoanIQ.logError("widgetRefNum6 in postOpenInitialization..." + widgetRefNum6 + "\n");
+widgetRefNum5.disableValue("rescheduleMenuChoice");
+
+var widgetRefNum7 = controller.getSubpartNamed("optionsMenu");
+com.misys.liq.LoanIQ.logError("widgetRefNum7 in postOpenInitialization..." + widgetRefNum7 + "\n");
+widgetRefNum5.disableValue("synchronizeMenuChoice");
+
+
+//widgetRefNum1.disableValue("rescheduleMenuChoice");
+//widgetRefNum1.disableValue("synchronizeMenuChoice");
+//widgetRefNum1.disableValue("resetUserFixedPaymentMenuChoice");
+//widgetRefNum1.disableValue("faxesMenuChoice");
+//widgetRefNum1.disableValue("scheduleChangeNoticeMenuChoice");
+//widgetRefNum1.disableValue("reviewMenuChoice");
+//widgetRefNum1.disableValue("createMakeItLegalPaymentPlanMenuItem");
+//widgetRefNum1.disableValue("createTemporaryPaymentPlanMenuItem");
+//widgetRefNum1.disableValue("importMenuChoice");
+//widgetRefNum1.disableValue("rederiveFromWAM");
+
+}
+ ,preActionFilter: function(controller, actionName) {
+return "OK";
+ }
+ }

@@ -1,0 +1,41 @@
+importPackage(com.misys.liq.bm.desktopcore.main.cdt.customer);
+importPackage(com.sxsy.smtj.exceptions);
+importPackage(com.misys.liq.infrastructure.exceptions);
+importPackage(com.misys.liq);
+importPackage(com.misys.liq.infrastructure.bm.handlers);
+importPackage(com.misys.custom.controllerevents);
+
+/**
+ * $boilerplate$
+ * For Controller Events to Work Start LoanIQ with "-scriptedControllerEvents:Y"
+*/
+new Object() {
+ postOpenInitialization: function(controller) {
+ //verify the client logs for below message 
+com.misys.liq.LoanIQ.logError("Control is in postOpenInitialization..." + controller.getName() + "\n");
+
+var widgetRefNum1 = controller.getSubpartNamed("servicingGroupSelect");
+com.misys.liq.LoanIQ.logError("widgetcRefNum1 in postOpenInitialization..." + widgetRefNum1.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetcRefNum1 in postOpenInitialization..." + widgetRefNum1.getClass().getSuperclass() + "\n");
+widgetRefNum1.protect();
+com.misys.liq.LoanIQ.logError("widgetcRefNum1 in postOpenInitialization is protected \n");
+
+var widgetRefNum2 = controller.getSubpartNamed("preferredInstructsButton");
+com.misys.liq.LoanIQ.logError("widgetcRefNum2 in postOpenInitialization..." + widgetRefNum2.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetcRefNum2 in postOpenInitialization..." + widgetRefNum2.getClass().getSuperclass() + "\n");
+widgetRefNum2.protect();
+com.misys.liq.LoanIQ.logError("widgetcRefNum2 in postOpenInitialization is protected \n");
+
+
+var widgetRefNum3 = controller.getSubpartNamed("customerSelect");
+com.misys.liq.LoanIQ.logError("widgetcRefNum3 in postOpenInitialization..." + widgetRefNum3.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetcRefNum3 in postOpenInitialization..." + widgetRefNum3.getClass().getSuperclass() + "\n");
+widgetRefNum3.protect();
+com.misys.liq.LoanIQ.logError("widgetcRefNum3 in postOpenInitialization is protected \n");
+
+
+}
+ ,preActionFilter: function(controller, actionName) {
+return "OK";
+ }
+ }

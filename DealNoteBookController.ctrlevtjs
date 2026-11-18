@@ -1,0 +1,89 @@
+importPackage(com.misys.liq.bm.desktopcore.main.cdt.customer);
+importPackage(com.sxsy.smtj.exceptions);
+importPackage(com.misys.liq.infrastructure.exceptions);
+importPackage(com.misys.liq);
+importPackage(com.misys.liq.infrastructure.bm.handlers);
+importPackage(com.misys.custom.controllerevents);
+
+/**
+ * $boilerplate$
+ * For Controller Events to Work Start LoanIQ with "-scriptedControllerEvents:Y"
+*/
+new Object() {
+ postOpenInitialization: function(controller) {
+ //verify the client logs for below message 
+com.misys.liq.LoanIQ.logError("Control is in postOpenInitialization..." + controller.getName() + "\n");
+
+var widgetRefNum1 = controller.getSubpartNamed("adminAgentName");
+com.misys.liq.LoanIQ.logError("widgetcRefNum1 in postOpenInitialization..." + widgetRefNum1.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetcRefNum1 in postOpenInitialization..." + widgetRefNum1.getClass().getSuperclass() + "\n");
+widgetRefNum1.protect();
+com.misys.liq.LoanIQ.logError("adminAgentName in postOpenInitialization is protected \n");
+
+var widgetRefNum2 = controller.getSubpartNamed("dealTeamAdministratorDescription");
+com.misys.liq.LoanIQ.logError("widgetcRefNum2 in postOpenInitialization..." + widgetRefNum2.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetcRefNum2 in postOpenInitialization..." + widgetRefNum2.getClass().getSuperclass() + "\n");
+widgetRefNum2.protect();
+com.misys.liq.LoanIQ.logError("dealTeamAdministratorDescription in postOpenInitialization is protected \n");
+
+
+
+
+var widgetRefNum3 = controller.getSubpartNamed("classificationDescription");
+com.misys.liq.LoanIQ.logError("widgetcRefNum3 in postOpenInitialization..." + widgetRefNum3.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetcRefNum3 in postOpenInitialization..." + widgetRefNum3.getClass().getSuperclass() + "\n");
+widgetRefNum3.protect();
+com.misys.liq.LoanIQ.logError("classificationDescription in postOpenInitialization is protected \n");
+
+
+var widgetRefNum4 = controller.getSubpartNamed("adminAgent");
+com.misys.liq.LoanIQ.logError("widgetRefNum4 in postOpenInitialization..." + widgetRefNum4.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetRefNum4 in postOpenInitialization..." + widgetRefNum4.getClass().getSuperclass() + "\n");
+widgetRefNum4.protect();
+com.misys.liq.LoanIQ.logError("adminAgent in postOpenInitialization is protected \n");
+
+var widgetRefNum5 = controller.getSubpartNamed("dealProjectedCloseDate");
+com.misys.liq.LoanIQ.logError("widgetRefNum5 in postOpenInitialization..." + widgetRefNum5.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetRefNum5 in postOpenInitialization..." + widgetRefNum5.getClass().getSuperclass() + "\n");
+widgetRefNum5.protect();
+com.misys.liq.LoanIQ.logError("dealProjectedCloseDate in postOpenInitialization is protected \n");
+
+var widgetRefNum6 = controller.getSubpartNamed("facilityAddCutoffDateField");
+com.misys.liq.LoanIQ.logError("widgetRefNum6 in postOpenInitialization..." + widgetRefNum6.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetRefNum6 in postOpenInitialization..." + widgetRefNum6.getClass().getSuperclass() + "\n");
+widgetRefNum6.protect();
+com.misys.liq.LoanIQ.logError("facilityAddCutoffDateField in postOpenInitialization is protected \n");
+
+var widgetRefNum7 = controller.getSubpartNamed("borrowers");
+com.misys.liq.LoanIQ.logError("widgetRefNum7 in postOpenInitialization..." + widgetRefNum7.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetRefNum7 in postOpenInitialization..." + widgetRefNum7.getClass().getSuperclass() + "\n");
+widgetRefNum7.protect();
+com.misys.liq.LoanIQ.logError("borrowers in postOpenInitialization is protected \n");
+
+var widgetRefNum8 = controller.getSubpartNamed("borrowers");
+com.misys.liq.LoanIQ.logError("widgetRefNum8 in postOpenInitialization..." + widgetRefNum8.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetRefNum8 in postOpenInitialization..." + widgetRefNum8.getClass().getSuperclass() + "\n");
+widgetRefNum8.protect();
+com.misys.liq.LoanIQ.logError("borrowers in postOpenInitialization is protected \n");
+
+
+var widgetRefNum9 = controller.getSubpartNamed("borrowerAdd");
+com.misys.liq.LoanIQ.logError("widgetRefNum9 in postOpenInitialization..." + widgetRefNum9.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetRefNum9 in postOpenInitialization..." + widgetRefNum9.getClass().getSuperclass() + "\n");
+widgetRefNum9.protect();
+com.misys.liq.LoanIQ.logError("borrowerAdd in postOpenInitialization is protected \n");
+
+var widgetRefNum10 = controller.getSubpartNamed("borrowerDelete");
+com.misys.liq.LoanIQ.logError("widgetRefNum10 in postOpenInitialization..." + widgetRefNum10.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetRefNum10 in postOpenInitialization..." + widgetRefNum10.getClass().getSuperclass() + "\n");
+widgetRefNum10.protect();
+com.misys.liq.LoanIQ.logError("borrowerDelete in postOpenInitialization is protected \n");
+
+com.misys.liq.LoanIQ.logError("borrowerDelete in postOpenInitialization is protected \n");
+
+
+}
+ ,preActionFilter: function(controller, actionName) {
+return "OK";
+ }
+ }
