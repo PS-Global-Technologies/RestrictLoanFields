@@ -34,21 +34,21 @@ public class RestrictDealFields implements LiqEventAction {
 		int previous = dealChangeTransaction.getPreviousBorrowers().size();
 		LoanIQ.logInfo("Previous borrowers List size: ");
 
-		if (current == previous) {
+		if (!Objects.equals(current, previous)) {
 			ExceptionUtility.throwException((Throwable) new LiqError(StringUtility.bindWith(
 					Messages.liqNlsExternalizedMessage("GIB Internal Validation: "
 							+ "Borrowers Update in Loan IQ is restricted, Please use FCLS to do this event"),
 					new Object[0])));
 
 		} else {
-			if (dealChangeTransaction.getPreviousGracePeriod() == dealChangeTransaction.getDeal().gracePeriod) {
+			if (dealChangeTransaction.getPreviousGracePeriod() != dealChangeTransaction.getDeal().gracePeriod) {
 				ExceptionUtility.throwException((Throwable) new LiqError(StringUtility.bindWith(
 						Messages.liqNlsExternalizedMessage("GIB Internal Validation: "
 								+ "Grace Period Update in Loan IQ is restricted, Please use FCLS to do this event"),
 						new Object[0])));
 			}
 
-			else if (!isDateChanged(dealChangeTransaction.getPreviousSblcIssuanceDate(),
+			else if (isDateChanged(dealChangeTransaction.getPreviousSblcIssuanceDate(),
 					(LiqDate) dealChangeTransaction.getDeal().getSblcIssuanceDate())) {
 				ExceptionUtility.throwException((Throwable) new LiqError(StringUtility.bindWith(
 						Messages.liqNlsExternalizedMessage("GIB Internal Validation: "
@@ -57,7 +57,7 @@ public class RestrictDealFields implements LiqEventAction {
 
 			}
 
-			else if (!isDateChanged(dealChangeTransaction.getPreviousSblcIssuanceDate(),
+			else if (isDateChanged(dealChangeTransaction.getPreviousSblcIssuanceDate(),
 					(LiqDate) dealChangeTransaction.getDeal().getSblcUsageExpirationDate())) {
 
 				ExceptionUtility.throwException((Throwable) new LiqError(StringUtility.bindWith(
@@ -89,14 +89,14 @@ public class RestrictDealFields implements LiqEventAction {
 
 			
 			else if ((dealChangeTransaction.getPreviousMaximumNumberOfLoans()
-				==(dealChangeTransaction.getDeal().getMaximumNumberOfLoans()))) {
+				!=(dealChangeTransaction.getDeal().getMaximumNumberOfLoans()))) {
 				ExceptionUtility.throwException((Throwable) new LiqError(StringUtility.bindWith(
 						Messages.liqNlsExternalizedMessage("GIB Internal Validation: "
 								+ "Max Drawdawn Amount Update in Loan IQ is restricted, Please use FCLS to do this event"),
 						new Object[0])));
 
 			} else if ((dealChangeTransaction.getPreviousMaximumNumberOfMatchFundedLoans()
-					==(dealChangeTransaction.getDeal().getMaximumNumberOfMatchFundedLoans()))) {
+					!=(dealChangeTransaction.getDeal().getMaximumNumberOfMatchFundedLoans()))) {
 				ExceptionUtility.throwException((Throwable) new LiqError(StringUtility.bindWith(
 						Messages.liqNlsExternalizedMessage("GIB Internal Validation: "
 								+ "Min Drawdawn Amount Update in Loan IQ is restricted, Please use FCLS to do this event"),
@@ -111,7 +111,7 @@ public class RestrictDealFields implements LiqEventAction {
 						new Object[0])));
 			}
 			
-			else if (Objects.equals(
+			else if (!Objects.equals(
 			        dealChangeTransaction.getPreviousReserveAdjustedRatesIndicator(),
 			        dealChangeTransaction.getReserveAdjustedRatesIndicator())) {
 				
@@ -121,7 +121,7 @@ public class RestrictDealFields implements LiqEventAction {
 						new Object[0])));
 			}
 			
-			else if (Objects.equals(
+			else if (!Objects.equals(
 			        dealChangeTransaction.getPreviousActualIndicator(),
 			        dealChangeTransaction.getDeal().getActualIndicator())) {
 				
@@ -149,6 +149,16 @@ public class RestrictDealFields implements LiqEventAction {
 				ExceptionUtility.throwException((Throwable) new LiqError(StringUtility.bindWith(
 						Messages.liqNlsExternalizedMessage("GIB Internal Validation: "
 								+ "Euro Interim Amount Precision in Loan IQ is restricted, Please use FCLS to do this event"),
+						new Object[0])));
+			}
+			
+			else if (!Objects.equals(
+			        dealChangeTransaction.zz_comments(),
+			        dealChangeTransaction.getDeal().zz_comments())) {
+				
+				ExceptionUtility.throwException((Throwable) new LiqError(StringUtility.bindWith(
+						Messages.liqNlsExternalizedMessage("GIB Internal Validation: "
+								+ "Deal Comment Update in Loan IQ is restricted, Please use FCLS to do this event"),
 						new Object[0])));
 			}
 			
