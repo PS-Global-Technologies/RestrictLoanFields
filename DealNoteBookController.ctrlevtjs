@@ -79,7 +79,50 @@ com.misys.liq.LoanIQ.logError("widgetRefNum10 in postOpenInitialization..." + wi
 widgetRefNum10.protect();
 com.misys.liq.LoanIQ.logError("borrowerDelete in postOpenInitialization is protected \n");
 
-com.misys.liq.LoanIQ.logError("borrowerDelete in postOpenInitialization is protected \n");
+
+var widgetRefNum11 = controller.getSubpartNamed("autoChangeToNonPerformingStatus");
+com.misys.liq.LoanIQ.logError("widgetRefNum11 in postOpenInitialization..." + widgetRefNum11.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetRefNum11 in postOpenInitialization..." + widgetRefNum11.getClass().getSuperclass() + "\n");
+widgetRefNum11.protect();
+com.misys.liq.LoanIQ.logError("autoChangeToNonPerformingStatus in postOpenInitialization is protected \n");
+
+var widgetRefNum12 = controller.getSubpartNamed("includeInXMLBillIndicator");
+com.misys.liq.LoanIQ.logError("widgetRefNum12 in postOpenInitialization..." + widgetRefNum12.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetRefNum12 in postOpenInitialization..." + widgetRefNum12.getClass().getSuperclass() + "\n");
+widgetRefNum12.protect();
+com.misys.liq.LoanIQ.logError("includeInXMLBillIndicator in postOpenInitialization is protected \n");
+
+var widgetRefNum13 = controller.getSubpartNamed("pastDueBasedOnBilled");
+com.misys.liq.LoanIQ.logError("widgetRefNum13 in postOpenInitialization..." + widgetRefNum13.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetRefNum13 in postOpenInitialization..." + widgetRefNum13.getClass().getSuperclass() + "\n");
+widgetRefNum13.protect();
+com.misys.liq.LoanIQ.logError("pastDueBasedOnBilled in postOpenInitialization is protected \n");
+
+
+var widgetRefNum14 = controller.getSubpartNamed("penaltySpreadHistoryButton");
+com.misys.liq.LoanIQ.logError("widgetRefNum14 in postOpenInitialization..." + widgetRefNum14.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetRefNum14 in postOpenInitialization..." + widgetRefNum14.getClass().getSuperclass() + "\n");
+widgetRefNum14.protect();
+com.misys.liq.LoanIQ.logError("penaltySpreadHistoryButton in postOpenInitialization is protected \n");
+
+
+var widgetRefNum15 = controller.getSubpartNamed("dealConsolidatedBillingIndicator");
+com.misys.liq.LoanIQ.logError("widgetRefNum15 in postOpenInitialization..." + widgetRefNum15.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetRefNum15 in postOpenInitialization..." + widgetRefNum15.getClass().getSuperclass() + "\n");
+widgetRefNum15.protect();
+com.misys.liq.LoanIQ.logError("dealConsolidatedBillingIndicator in postOpenInitialization is protected \n");
+
+var widgetRefNum16 = controller.getSubpartNamed("dealReserveAdjustedRatesIndicator");
+com.misys.liq.LoanIQ.logError("widgetRefNum16 in postOpenInitialization..." + widgetRefNum16.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetRefNum16 in postOpenInitialization..." + widgetRefNum16.getClass().getSuperclass() + "\n");
+widgetRefNum16.protect();
+com.misys.liq.LoanIQ.logError("dealReserveAdjustedRatesIndicator in postOpenInitialization is protected \n");
+
+var widgetRefNum17 = controller.getSubpartNamed("externalConsortiumDropDown");
+com.misys.liq.LoanIQ.logError("widgetRefNum17 in postOpenInitialization..." + widgetRefNum17.getClass().getName() + "\n");
+com.misys.liq.LoanIQ.logError("widgetRefNum17 in postOpenInitialization..." + widgetRefNum17.getClass().getSuperclass() + "\n");
+widgetRefNum17.protect();
+com.misys.liq.LoanIQ.logError("externalConsortiumDropDown in postOpenInitialization is protected \n");
 
 
 }
